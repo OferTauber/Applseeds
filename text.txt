@@ -1,4 +1,12 @@
 Test - dummy documant
 
 edited!!!!
+<<<<<<< HEAD
   re re re edit
+=======
+
+
+re  re re fe fe foo
+
+doo doo doo
+>>>>>>> d6b416eeb63b16f4ea0640364044945aa2511d3e
