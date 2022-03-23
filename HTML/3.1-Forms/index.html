@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <form action="#">
+      <h2>Create an Account</h2>
+      <div>
+        <label for="email">Email:</label>
+        <br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="myemail@gmail.com"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="password">Password:</label>
+        <br />
+        <input type="password" name="password" id="password" />
+      </div>
+      <br />
+      <div>
+        <label for="age">Age:</label> <br />
+        <!-- <input
+          type="number"
+          name="age"
+          id="age"
+          min="1"
+          max="120"
+          placeholder="Select age"
+        /> -->
+        <select name="age" id="age">
+          <option value="grupe1">0-18</option>
+          <option value="grupe2">19-29</option>
+          <option value="grupe3">30-45</option>
+          <option value="grupe4">46-67</option>
+          <option value="grupe5">+68</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="user-info">Tell us a bit abute yourself:</label> <br />
+        <textarea name="user-info" id="user-info" cols="50" rows="5"></textarea>
+      </div>
+      <br />
+      <div>
+        <input
+          type="checkbox"
+          id="terms-of-use-agree"
+          name="terms-of-use-agree"
+          value="yes"
+        />I agree to the <a href="#">terms of service</a>
+      </div>
+      <br />
+      <div><input type="submit" value="Sing up" /></div>
+    </form>
+  </body>
+</html>
