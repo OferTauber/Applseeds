@@ -1,0 +1,147 @@
+/* ====== utils ====== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f8e10c;
+}
+
+header,
+footer {
+  width: 100%;
+  background-color: #f8e10c;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.clr {
+  clear: both;
+  margin-bottom: 15px;
+}
+
+/* ====== header ====== */
+header {
+  height: 70px;
+}
+
+#header-container {
+  height: 70px;
+  width: 100%;
+  background-image: url('/ofers_utils/ofer_logo_yellow.png');
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 30px;
+}
+
+#header-container h1 {
+  font-family: 'Bevan', cursive;
+  margin-left: 120px;
+  padding-top: 14px;
+}
+
+/* ===== main ===== */
+main {
+  background-color: #505050;
+  /* height: 330px;  - the new clr makes it irrelevant*/
+}
+
+main p,
+h4,
+h3 {
+  color: wheat;
+  padding: 5px;
+}
+
+/* main h3,
+img {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  padding: 5px;
+} */
+
+main h3 {
+  float: left;
+  line-height: 100px;
+}
+
+main img {
+  width: 100px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  float: inline-end;
+  margin: 10px;
+}
+
+main h4 {
+  text-align: center;
+}
+
+.square-cards {
+  display: block;
+  background-color: #f8e10c;
+  margin: 10px;
+  border-radius: 2px;
+  width: calc(550px / 4);
+  height: 130px;
+  float: left;
+  padding: 15px 5px;
+  border-radius: 8px;
+  border: #020202 3px solid;
+  box-shadow: 3px 3px 10px#020202;
+}
+
+.square-cards p {
+  color: #020202;
+  text-align: center;
+}
+
+/* ==== footer ====== */
+footer {
+  height: 80px;
+}
+
+footer p {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+footer ul {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+footer li {
+  float: left;
+  list-style: none;
+}
+
+footer p {
+  font-family: Bevan;
+}
+
+/* ===== footer - raund-cards ====== */
+.raund-card {
+  display: block;
+  background-color: yellow;
+  height: 30px;
+  width: 30px;
+  margin: 5px 10px;
+  padding: 5px;
+  border: 2px rgb(92, 92, 92) solid;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px gray;
+}
+
+.raund-card:hover {
+  background-color: #f8e10c;
+}

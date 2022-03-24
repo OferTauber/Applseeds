@@ -1,0 +1,112 @@
+/* ====== utils ====== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f8e10c;
+}
+
+header,
+footer {
+  width: 100%;
+  background-color: #f8e10c;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* ====== header ====== */
+header {
+  height: 70px;
+}
+
+#header-container {
+  height: 70px;
+  width: 100%;
+  background-image: url('/ofers_utils/ofer_logo_yellow.png');
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 30px;
+}
+
+#header-container h1 {
+  font-family: 'Bevan', cursive;
+  margin-left: 120px;
+  padding-top: 14px;
+}
+
+/* ===== main ===== */
+main {
+  background-color: #020202;
+  height: 350px;
+}
+
+main p,
+h4,
+h3 {
+  color: wheat;
+  padding: 5px;
+}
+
+main h3,
+img {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  padding: 5px;
+}
+
+main img {
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ==== footer ====== */
+footer {
+  height: 80px;
+}
+
+footer p {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+footer ul {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+footer li {
+  float: left;
+  list-style: none;
+}
+
+footer p {
+  font-family: Bevan;
+}
+
+/* ===== footer - cards ====== */
+.card {
+  display: block;
+  background-color: yellow;
+  height: 30px;
+  width: 30px;
+  margin: 5px 10px;
+  padding: 5px;
+  border: 2px rgb(92, 92, 92) solid;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px gray;
+}
+
+.card:hover {
+  background-color: #f8e10c;
+}
