@@ -1,0 +1,24 @@
+#outer {
+  width: 100px;
+  height: 100px;
+  background: darkcyan;
+  margin: 50px;
+  font-size: small;
+}
+#inner {
+  width: 50px;
+  height: 50px;
+  background: lightgreen;
+
+  /* original code */
+  position: absolute;
+  /* original code */
+
+  /* my code */
+  position: relative;
+  /* my code */
+
+  top: 10px;
+}
+
+/* Because I solved the previous exercise using "relative" - the inner box will always keep a space of 10 pixels below the text - relative to the position where the line of text ends. */
