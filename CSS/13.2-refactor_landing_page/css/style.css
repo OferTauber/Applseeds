@@ -1,0 +1,250 @@
+/* General --------------------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'heebo', sans-serif;
+  text-align: right;
+  direction: rtl;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: #e08010;
+  border-radius: 40rem;
+  background-color: #e08010;
+  color: #fff;
+  font-family: heebo, sans-serif;
+  font-size: 1.3rem;
+  padding: 1rem;
+  width: 24rem;
+  cursor: pointer;
+}
+
+/* Utilety --------------------------------*/
+
+.blue-background {
+  background-color: #118dcf;
+  color: #fff;
+}
+
+.white-background {
+  background-color: #fff;
+  color: #118dcf;
+}
+
+/* Header --------------------------------*/
+
+#top-bar {
+  height: 17.5rem;
+  display: flex;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 500;
+}
+.container {
+  display: flex;
+  width: 100%;
+  /**************למחוק************/
+  /* border: rgb(219, 24, 203) 2px dashed; */
+  /**************למחוק************/
+}
+
+/* Logo =========*/
+.logo-box {
+  /**************למחוק************/
+  /* border: black 1px dashed; */
+  /**************למחוק************/
+  width: 36.8rem;
+  flex-shrink: 0;
+}
+
+.logo-box img {
+  display: block;
+  margin-top: 3.1rem;
+  margin-right: 5.6rem;
+  height: 50px;
+  width: 170px;
+}
+
+/* Text ========*/
+.canterd-box {
+  /**************למחוק************/
+  /* border: black 1px dashed; */
+  /**************למחוק************/
+  width: 100%;
+  flex-grow: initial;
+}
+
+.canterd-box p {
+  margin: auto;
+}
+
+.text-box {
+  /**************למחוק************/
+  /* border: red 1px dashed; */
+  /**************למחוק************/
+
+  text-align: center;
+  margin-top: 70px;
+}
+
+.orenge-box {
+  background-color: #e08010;
+  border-radius: 4px;
+  width: fit-content;
+  border-radius: 6px;
+  margin: auto;
+  padding: 1rem 2.5rem;
+  position: relative;
+  top: 4rem;
+}
+
+.orenge-box p {
+  font-size: 23px;
+  font-weight: lighter;
+}
+/* form & gif --------------------------------*/
+
+.form-box {
+  flex-shrink: 0;
+  height: 37rem;
+  width: 27.5rem;
+  position: relative;
+  top: -80px;
+  margin-right: 150px;
+  background-color: #f2f1f9;
+  box-shadow: 1px 1px 5px #00000029;
+  border-radius: 10px;
+  position: relative;
+}
+
+.form-box form {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+}
+
+.form-box input {
+  border: none;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  width: 85%;
+  color: #909090;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+}
+
+.form-box p {
+  color: #909090;
+}
+
+.form-box a {
+  color: #00aeef;
+}
+
+.form-box input,
+button {
+  margin: auto;
+}
+
+.container.gif-box {
+  width: 100%;
+  flex-grow: initial;
+}
+
+.container .gif-box {
+  position: relative;
+  top: 3rem;
+}
+
+.container .gif-box img {
+  width: 400px;
+  height: 400px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gif-box img {
+  display: block;
+  margin: auto;
+}
+
+p {
+  text-align: center;
+}
+
+/* _______ --------------------------------*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.card {
+  width: 19rem;
+  padding: 2rem;
+  margin: auto;
+  height: 12rem;
+}
+
+.card .icon,
+h5,
+p {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+h3,
+h5 {
+  font-weight: 400;
+}
+
+.card p {
+  font-weight: 100;
+}
+
+.white-background .card p {
+  font-weight: 300;
+}
+
+h3,
+h5 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.blue-background h3 {
+  padding-top: 1rem;
+}
+
+.icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon1 {
+  background-image: url('/img/signature@1x.png');
+}
+
+.icon2 {
+  background-image: url('/img/square@1x.png');
+}
+
+.icon3 {
+  background-image: url('/img/circle@1x.png');
+}
+section div {
+  padding: 3rem 0 5rem;
+}
+
+section button {
+  display: block;
+  margin: auto;
+}

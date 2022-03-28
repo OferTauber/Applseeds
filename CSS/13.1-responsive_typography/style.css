@@ -1,0 +1,21 @@
+body {
+  padding-top: 20px;
+}
+h2 {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #444;
+  font-size: 3vw;
+}
+
+@media (max-width: 500px) {
+  .min-limit {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1666px) {
+  .max-limit {
+    font-size: 50px;
+  }
+}

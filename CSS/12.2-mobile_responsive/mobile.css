@@ -1,0 +1,5 @@
+.text-box {
+  display: block;
+  max-width: 90%;
+  margin: 8px auto;
+}

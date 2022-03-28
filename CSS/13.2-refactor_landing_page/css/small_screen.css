@@ -1,0 +1,31 @@
+.logo-box {
+  flex-shrink: 3;
+}
+
+.logo-box img {
+  margin-right: 5%;
+}
+
+.orenge-box {
+  position: relative;
+  left: 13%;
+}
+
+.container {
+  flex-direction: column;
+  padding: 0;
+}
+
+.form-box {
+  margin: auto;
+  margin-top: 4rem;
+  top: 0;
+}
+
+.gif-box {
+  padding-bottom: 5rem;
+}
+
+.grid-container {
+  grid-template-columns: auto auto;
+}

@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex-container {
+  max-width: 700px;
+  height: 50vh;
+  margin: 20px auto;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px #666 solid;
+}
+
+#box1 {
+  background-color: green;
+}
+#box2 {
+  background-color: blue;
+}
+#box3 {
+  background-color: red;
+}

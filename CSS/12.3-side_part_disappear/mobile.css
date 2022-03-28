@@ -1,0 +1,9 @@
+#side {
+  display: none;
+}
+
+#main {
+  float: none;
+  width: 100%;
+  text-align: center;
+}

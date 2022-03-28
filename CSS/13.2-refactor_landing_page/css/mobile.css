@@ -1,0 +1,19 @@
+#top-bar {
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+.orenge-box {
+  position: static;
+}
+
+.text-box {
+  margin-top: 2rem;
+}
+
+.grid-container {
+  grid-template-columns: auto;
+}
