@@ -1,0 +1,8 @@
+a {
+  text-decoration: none;
+  color: lightskyblue;
+}
+
+a::after {
+  content: " (https://www.wikipedia.org)";
+}

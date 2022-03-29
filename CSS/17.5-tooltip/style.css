@@ -1,0 +1,26 @@
+a {
+  position: relative;
+}
+
+a:hover::before {
+  /* content: "data-tooltip"; */
+  content: attr(data-tooltip);
+  height: fit-content;
+  width: fit-content;
+  background-color: bisque;
+  padding: 3px;
+  border: 1px solid rgb(255, 174, 74);
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+div {
+  height: attr(data-h);
+  width: attr(data-w);
+  background-color: attr(data-color);
+  border: 1px dashed gray;
+  height: 100px;
+  content: attr(data-color);
+}

@@ -1,0 +1,16 @@
+.box-item {
+  height: 200px;
+  width: 200px;
+  background-color: blueviolet;
+  margin: 50px;
+}
+
+.box-item::after {
+  content: "";
+  display: block;
+  height: 200px;
+  width: 100px;
+  background-color: rgb(246, 156, 21);
+  position: relative;
+  top: 0;
+}
