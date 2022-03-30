@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --base-color: gray;
+  --front-bolr: rgb(18, 248, 141);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 95vh;
+  width: 95vw;
+  background-color: #333;
+}
+
+h1 {
+  color: #f3f3f3;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.flex-container {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  margin-bottom: 40px;
+}
+
+.flex-item > div {
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+}
+
+.ring {
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spinner-1 {
+  border: 8px var(--base-color) solid;
+  border-top-color: var(--front-bolr);
+}
+
+#spinner-2 {
+  border: 8px lightgray solid;
+  border-top-color: var(--front-bolr);
+  border-bottom: none;
+  border-left: none;
+  border-right-color: #333;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: var(--base-color);
+  border-radius: 50%;
+  margin: 10px;
+}
+
+#flicker > .dot {
+  animation: flicker 1.5s infinite linear;
+}
+
+#flicker .dot-m {
+  animation-delay: 0.2s;
+}
+#flicker .dot-r {
+  animation-delay: 0.4s;
+}
+
+@keyframes flicker {
+  0% {
+    background-color: var(--base-color);
+  }
+  25% {
+    background-color: var(--front-bolr);
+  }
+  50% {
+    background-color: var(--base-color);
+  }
+  100% {
+    background-color: var(--base-color);
+  }
+}
+
+#jump > .dot {
+  animation: jump 1.5s infinite linear;
+  background-color: var(--front-bolr);
+}
+
+#jump .dot-m {
+  animation-delay: 0.15s;
+}
+#jump .dot-r {
+  animation-delay: 0.3s;
+}
+
+@keyframes jump {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: translateY(-50px);
+  }
+  40% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}

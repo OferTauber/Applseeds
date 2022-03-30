@@ -1,0 +1,120 @@
+:root {
+  --box-h: 80px;
+  --box-w: 200px;
+  --bg-gray: #bbb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 95vh;
+  width: 95vw;
+  background-color: var(--bg-gray);
+}
+.flex-container {
+  max-width: 800px;
+  height: 60%;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.box {
+  border: 2px solid #222;
+  height: var(--box-h);
+  width: var(--box-w);
+  line-height: var(--box-h);
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  position: relative;
+  /* overflow: hidden; */
+  margin: 50px;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+.box::before {
+  content: '';
+  height: var(--box-h);
+  width: var(--box-w);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ========== translate==========  */
+#translate:hover {
+  transition: all 1s ease;
+  color: #ccc;
+}
+
+#translate::before {
+  transition: all 1s ease;
+  transition-property: all;
+  background-color: darkblue;
+  transform: translateX(var(--box-w));
+}
+
+#translate:hover::before {
+  transform: translateX(-1px);
+}
+
+/* ========== translate - y ========== */
+#translate-y::before {
+  content: 'Yarrrr!!';
+  transition: width 1s ease;
+  transition-property: all;
+  background-color: red;
+  transform: translateY(-80px);
+  width: 196px;
+  height: 76px;
+}
+
+#translate-y:hover::before {
+  transform: translateY(0);
+  z-index: 1;
+}
+
+/* ========== rotate ========== */
+
+#rotate::before {
+  transition: all 1s ease;
+  background-color: yellow;
+  transform: rotate(-90deg);
+  top: -140px;
+  left: -60px;
+}
+
+#rotate:hover::before {
+  height: calc(var(--box-h) - 2px);
+  transform: none;
+  top: 0;
+  left: 0;
+}
+
+/* ====== Scale & Opacity ====== */
+#scale-and-opacity::before {
+  content: 'Scale & Opacity';
+  color: #f3f3f3;
+  transform: scale(2, 2);
+  background-color: black;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1s;
+}
+
+#scale-and-opacity:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
