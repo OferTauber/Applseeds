@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.grid-container {
+  padding: 15px;
+  margin: auto;
+
+  display: grid;
+  grid-template-rows: repeat(7, 20vh);
+  grid-template-columns: 1fr 1fr;
+
+  width: 100vw;
+  grid-gap: 0.5rem;
+}
+
+@media (min-width: 435px) {
+  .grid-container {
+    height: 100vh;
+    grid-template-columns: repeat(7, 25%);
+    grid-template-rows: repeat(4 1fr);
+    grid-template-areas:
+      'item1 item2 item2 item2'
+      'item5 item4 item4 item3'
+      'item5 item7 item6 item6'
+      'item8 item7 item6 item6'
+      'item9 item9 item11 item10'
+      'item9 item9 item11 item12'
+      'item14 item14 item13 item13';
+  }
+
+  #item1 {
+    grid-area: item1;
+  }
+  #item2 {
+    grid-area: item2;
+  }
+  #item3 {
+    grid-area: item3;
+  }
+  #item4 {
+    grid-area: item4;
+  }
+  #item5 {
+    grid-area: item5;
+  }
+  #item6 {
+    grid-area: item6;
+  }
+  #item7 {
+    grid-area: item7;
+  }
+  #item8 {
+    grid-area: item8;
+  }
+  #item9 {
+    grid-area: item9;
+  }
+  #item10 {
+    grid-area: item10;
+  }
+  #item11 {
+    grid-area: item11;
+  }
+  #item12 {
+    grid-area: item12;
+  }
+  #item13 {
+    grid-area: item13;
+  }
+  #item14 {
+    grid-area: item14;
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid-container {
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 2fr 1fr 1fr 1fr 2fr;
+    grid-template-areas:
+      'item1 item1 item2 item2 item2 item3 item4 item4'
+      'item5 item5 item2 item2 item2 item8 item8 item9'
+      'item5 item5 item6 item6 item7 item8 item8 item9'
+      'item5 item5 item6 item6 item13 item13 item13 item9'
+      'item10 item11 item11 item12 item13 item13 item13 item14';
+  }
+}
+
+.item {
+  border: 1px #ddd solid;
+}
+
+#item1 {
+  background: url('./images/gal-1.jpeg') center center/cover;
+}
+#item2 {
+  background: url('./images/gal-2.jpeg') center center/cover;
+}
+#item3 {
+  background: url('./images/gal-3.jpeg') center center/cover;
+}
+#item4 {
+  background: url('./images/gal-4.jpeg') center center/cover;
+}
+#item5 {
+  background: url('./images/gal-5.jpeg') center center/cover;
+}
+#item6 {
+  background: url('./images/gal-6.jpeg') center center/cover;
+}
+#item7 {
+  background: url('./images/gal-7.jpeg') center center/cover;
+}
+#item8 {
+  background: url('./images/gal-8.jpeg') center center/cover;
+}
+#item9 {
+  background: url('./images/gal-9.jpeg') center center/cover;
+}
+#item10 {
+  background: url('./images/gal-10.jpeg') center center/cover;
+}
+#item11 {
+  background: url('./images/gal-11.jpeg') center center/cover;
+}
+#item12 {
+  background: url('./images/gal-12.jpeg') center center/cover;
+}
+#item13 {
+  background: url('./images/gal-13.jpeg') center center/cover;
+}
+#item14 {
+  background: url('./images/gal-14.jpeg') center center/cover;
+}
