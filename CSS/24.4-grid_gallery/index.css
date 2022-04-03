@@ -99,44 +99,58 @@ body {
 }
 
 #item1 {
-  background: url('./images/gal-1.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-1.jpeg')
+    center center/cover;
 }
 #item2 {
-  background: url('./images/gal-2.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-2.jpeg')
+    center center/cover;
 }
 #item3 {
-  background: url('./images/gal-3.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-3.jpeg')
+    center center/cover;
 }
 #item4 {
-  background: url('./images/gal-4.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-4.jpeg')
+    center center/cover;
 }
 #item5 {
-  background: url('./images/gal-5.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-5.jpeg')
+    center center/cover;
 }
 #item6 {
-  background: url('./images/gal-6.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-6.jpeg')
+    center center/cover;
 }
 #item7 {
-  background: url('./images/gal-7.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-7.jpeg')
+    center center/cover;
 }
 #item8 {
-  background: url('./images/gal-8.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-8.jpeg')
+    center center/cover;
 }
 #item9 {
-  background: url('./images/gal-9.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-9.jpeg')
+    center center/cover;
 }
 #item10 {
-  background: url('./images/gal-10.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-10.jpeg')
+    center center/cover;
 }
 #item11 {
-  background: url('./images/gal-11.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-11.jpeg')
+    center center/cover;
 }
 #item12 {
-  background: url('./images/gal-12.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-12.jpeg')
+    center center/cover;
 }
 #item13 {
-  background: url('./images/gal-13.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-13.jpeg')
+    center center/cover;
 }
 #item14 {
-  background: url('./images/gal-14.jpeg') center center/cover;
+  background: url('https://raw.githubusercontent.com/pini85/grid-gallery/master/images/gal-14.jpeg')
+    center center/cover;
 }
