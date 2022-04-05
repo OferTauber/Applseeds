@@ -3,9 +3,9 @@
 // Based on this input, the function returns a string with this
 // format: 'Finland has 6 million people and its capital city is Helsinki'
 
-const describeCountry = function (country, population_millions, capitalCity) {
+function describeCountry(country, population_millions, capitalCity) {
   return `${country} has ${population_millions} million people and its capital city is ${capitalCity}`;
-};
+}
 
 // 2. Call this function 3 times, with input data for 3 different
 // countries. Store the returned values in 3 different variables,

@@ -2,9 +2,9 @@
 // argument. Print the area as it is calculated and then print it rounded to two
 // decimal places.
 
-const calcCircleArea = function (radius) {
+function calcCircleArea(radius) {
   return radius ** 2 * 3.14;
-};
+}
 
 console.log(calcCircleArea(1));
 console.log(calcCircleArea(2));
