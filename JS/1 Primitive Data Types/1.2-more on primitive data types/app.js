@@ -47,18 +47,18 @@ const Var3 = 3;
 console.log(var1, var2, Var3);
 
 //declare a variable and reassign a value to it
-let tempVal = 10;
-tempVal = -10;
+let temp_val = 10;
+temp_val = -10;
 
-console.log(tempVal);
+console.log(temp_val);
 
 //create a variable and after that assign a string with its value being: He's got it!
-let tempVal2 = 1;
-console.log('tempVal2 =', tempVal2);
+let temp_val2 = 1;
+console.log('temp_val2 =', temp_val2);
 
-tempVal2 = "She's got it!";
+temp_val2 = "She's got it!";
 
-console.log('tempVal2 =', tempVal2);
+console.log('temp_val2 =', temp_val2);
 /*
 1. create a variable and assign a value on how much a restaurant bill is.
 2. create a variable and assign a value on how much tax they should pay.
@@ -75,6 +75,6 @@ let rounded = Math.round(50.6);
 
 console.log(rounded);
 //Create a variable that is undefined
-let unDefined;
+let my_undefined;
 
-console.log(unDefined);
+console.log(my_undefined);
