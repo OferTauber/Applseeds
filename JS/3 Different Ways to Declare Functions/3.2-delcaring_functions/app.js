@@ -1,19 +1,26 @@
-// 1. Write a function called 'describeCountry' which takes three parameters:
-// 'country', 'population' and 'capitalCity'.
-// Based on this input, the function returns a string with this
-// format: 'Finland has 6 million people and its capital city is Helsinki'
+/*
+    JavaScript - Declaring Functions
+    The following exercise contains the following subjects:
+        * functions
+    
+    Instructions
+        * Please reformat the following function expressions to IIFE functions                           .
+        * Please reformat the following function declarations in two ways, explicit return and implicit return functions.
+    Submit the file to Hive
+*/
 
-function describeCountry(country, population_millions, capitalCity) {
-  return `${country} has ${population_millions} million people and its capital city is ${capitalCity}`;
-}
+// From function declarations to explicit and implicit return functions (one of each).
+const welcome = () => 'Welcome to Appleseeds Bootcamp!';
 
-// 2. Call this function 3 times, with input data for 3 different
-// countries. Store the returned values in 3 different variables,
-// and log them to the console.
-const israel = describeCountry('Israel', 10, 'Jerusalem');
-const australia = describeCountry('Australia', 35, 'Canberra');
-const india = describeCountry('India', 1400, 'New Delhi');
+const power = (a) => {
+  let myNumber = a;
+  let result = Math.pow(myNumber, 2);
+  return result;
+};
 
-console.log(israel);
-console.log(australia);
-console.log(india);
+// From function expressions to IIFE functions.
+(function (a) {
+  Math.sqrt(a);
+})();
+
+((a, b) => Math.random() * (a - b) + b)();
