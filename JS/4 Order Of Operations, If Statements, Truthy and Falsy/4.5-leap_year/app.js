@@ -1,19 +1,21 @@
-// 1. Write a function called 'describeCountry' which takes three parameters:
-// 'country', 'population' and 'capitalCity'.
-// Based on this input, the function returns a string with this
-// format: 'Finland has 6 million people and its capital city is Helsinki'
+// every year that is divisible by 4 is a leap year except for the ones that are
+// also divisible by 100, unless it is divisible by 400. Example: 2012 is a leap
+// year 2100 is not But 2400 is.
 
-function describeCountry(country, population_millions, capitalCity) {
-  return `${country} has ${population_millions} million people and its capital city is ${capitalCity}`;
-}
+isLeapYear = (year) => {
+  if (year % 400 === 0) return true;
+  return year % 100 !== 0 && year % 4 === 0;
+};
 
-// 2. Call this function 3 times, with input data for 3 different
-// countries. Store the returned values in 3 different variables,
-// and log them to the console.
-const israel = describeCountry('Israel', 10, 'Jerusalem');
-const australia = describeCountry('Australia', 35, 'Canberra');
-const india = describeCountry('India', 1400, 'New Delhi');
+printIsLeapYear = (year) => {
+  if (isLeapYear(year)) {
+    console.log('It is indeed a leap year');
+  } else {
+    console.log('This is not a leap year');
+  }
+};
 
-console.log(israel);
-console.log(australia);
-console.log(india);
+printIsLeapYear(2012);
+printIsLeapYear(2013);
+printIsLeapYear(2100);
+printIsLeapYear(2400);
