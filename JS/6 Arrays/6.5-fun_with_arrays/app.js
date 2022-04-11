@@ -1,41 +1,26 @@
 'use strict';
-// 1. Fill an array with 100 of a same object using array fill method.
-const arr1 = new Array(100);
-console.log(arr1);
-arr1.fill({ data: 0 }, 0, 100);
-arr1[0].data = 2;
-console.log(arr1[1]);
 
-// 2. Create an array with numbers ranging from 1-100 using the Array.from method.
-const arr2 = Array.from(arr1, (element, index) => (element = index + 1));
-console.log(arr2);
-
-// 3. Convert only values of an object into one array.
-const obj = {
-  mane: 'Ofer Tauber',
-  age: 34,
-  has_children: true,
+// 1. Create an object that represents a book. It should have 4-5 properties that make sense for a book to have.
+// 2. Then write a function that has one argument, a book,that will return the following description from your book object:
+// `The book <book name> was written by <author name> in the year <publishing yeary
+const book1 = {
+  title: 'War and Peace',
+  author: 'Leo Tolstoy',
+  language: 'Russian',
+  publicationYear: 1869,
 };
 
-const arr3 = Object.values(obj);
-console.log(arr3);
+const book2 = {
+  title: 'Nineteen Eighty-Four',
+  author: 'George Orwell',
+  language: 'English',
+  publicationYear: 1949,
+};
 
-// 4. Convert an array into one object.
-const arr4 = ['a', 'b', 'c', 'd'];
-const obj2 = Object.assign({}, arr4);
+const bookInfo = (book) =>
+  console.log(
+    `The book "${book.title}" was written by ${book.author} in the year ${book.publicationYear}`
+  );
 
-console.log(obj2);
-
-// 5. Find out if an array is an array.
-console.log(`arr1 ${Array.isArray(arr1) ? 'is' : 'is not'} an array`);
-console.log(`obj2 ${Array.isArray(obj2) ? 'is' : 'is not'} an array`);
-
-// 6. Copy an array.
-//   • Create a copy of an array that won’t effect the original array if modified.
-const arr5 = [...arr4];
-//   • Create a copy of an array that will effect the original array if modified.
-const arr6 = arr4;
-
-arr6[0] = "I'm new!";
-console.log(arr5);
-console.log(arr4);
+bookInfo(book1);
+bookInfo(book2);
