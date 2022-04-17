@@ -11,17 +11,6 @@ const extractOnlyValue = (arrOfObjs, key) => {
   }, []);
 };
 
-// const test = (testCasesArr, callback) => {
-//   for (const testCase of testCasesArr) {
-//     const res = callback(...testCase.caseInput);
-//     if (testCase.expected !== res) {
-//       console.error(`test fail for case ${testCase.caseInput}`);
-//       console.info(`res = ${res}`);
-//       console.info(`exp = ${testCase.expected}`);
-//     }
-//   }
-// };
-
 const library = [
   {
     author: 'Bill Gates',
@@ -43,3 +32,31 @@ const library = [
 console.log(extractOnlyValue(library, 'title'));
 console.log(extractOnlyValue(library, 'author'));
 console.log(extractOnlyValue(library, 'readingStatus'));
+
+// Write a function called countOnlyVowels which accepts a string and
+// returns an object with the keys as the vowel and the values as the number
+// of times the vowel appears in the string. This function should be case
+// insensitive so a lowercase letter and uppercase letter should count
+
+const countOnlyVowels = (str) => {
+  const vowels = [...'aeiou'];
+  const obj = str
+    .toLowerCase()
+    .split('')
+    .reduce((acc, cur) => {
+      if (vowels.includes(cur)) {
+        acc[cur] = acc[cur] ? acc[cur] + 1 : 1;
+      }
+      return acc;
+    }, new Object());
+
+  return obj;
+};
+
+console.log(countOnlyVowels('sdkfl'));
+console.log(countOnlyVowels('asdkfl'));
+console.log(countOnlyVowels('asdkandfeiufl'));
+
+// Write a function called addKeyAndValue which accepts 3 parameters an
+// array of objects, key and value and returns the array of objects passed to it
+// .with each object now including the key and value passed to the function
