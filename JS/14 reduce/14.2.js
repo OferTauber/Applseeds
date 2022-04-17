@@ -58,5 +58,15 @@ console.log(countOnlyVowels('asdkfl'));
 console.log(countOnlyVowels('asdkandfeiufl'));
 
 // Write a function called addKeyAndValue which accepts 3 parameters an
-// array of objects, key and value and returns the array of objects passed to it
-// .with each object now including the key and value passed to the function
+// array of objects, key and value and returns the array of objects passed to it with each object now including the key and value passed to the function
+
+const addKeyAndValue = (objectsArr, key, value) => {
+  return objectsArr.reduce((acc, cur) => {
+    cur[key] = value;
+    return acc;
+  }, objectsArr);
+};
+
+console.log(library);
+addKeyAndValue(library, 'lang', 'en');
+console.log(library);
