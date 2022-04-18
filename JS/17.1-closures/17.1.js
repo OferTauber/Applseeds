@@ -13,7 +13,6 @@ function someFunction(number) {
 }
 var firstResult = someFunction(9);
 var result = firstResult(2);
-
 //! The someFunction function receives input, but ignores it, and performs 3 operations:
 //! Defining the otherFunction function, defining the (global) variable b and repeating the otherFunction function.
 //! In the firstResult setting we run the someFunction function which returns the otherFunction and as a side effect changes the value of b to 5.
@@ -28,7 +27,17 @@ function b2() {
 }
 b2();
 console.log(a);
-
 //! Within the b2 function, the function a is defined (even if it is after the return). In the interpreter phase - the variable a is defined twice - once in the global scope, and a second time within the b2 function (as an internal function).
 //! In the code execution phase - when function b2 tries to redefine a - it does not refer to the global variable but to its internal function.
 //! So even after running b2 - printing the global value of a will display 1 - it's just not the same a
+
+let i;
+for (i = 0; i < 3; i++) {
+  const log = () => {
+    console.log(i);
+  };
+  setTimeout(log, 100);
+}
+
+//! The FOR loop defined 3 instances of the "Log" function, all with the same name, and all referring to the global variable  i.
+//! In calling the function (s) - all 3 instances of the "Log" function print the global variable i, which at this point is equal to 3.
