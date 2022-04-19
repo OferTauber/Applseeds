@@ -627,26 +627,87 @@ const carMarket = {
 //* getAgencyByName
 //? @param {string} - name
 //? @return {Object} - agency object
+carMarket.getAgencyByName = function (agencyName) {
+  return this.sellers.find(
+    (agency) =>
+      0 ===
+      agency.agencyName.toLowerCase().localeCompare(agencyName.toLowerCase())
+  );
+};
+
+carMarket.getAgencyById = function (agencyId) {
+  return this.sellers.find(
+    (agency) => 0 === agency.agencyId.localeCompare(agencyId)
+  );
+};
+
+// todo: console.log(carMarket.getAgencyByName('BeSt deal'));
+// todo: console.log(carMarket.getAgencyByName(carMarket.sellers[2].agencyName));
+// todo: console.log(carMarket.getAgencyByName('no such agancy'));
 
 //* getAgencyIdByName
 //? @param {String} - name
 //? @return {String} - agencyId
+carMarket.getAgencyIdByName = function (agencyName) {
+  const agancy = this.getAgencyByName(agencyName);
+  return agancy && agancy.agencyId;
+};
+
+// todo: console.log(carMarket.getAgencyIdByName('BeSt deal'));
+// todo: console.log(carMarket.getAgencyIdByName(carMarket.sellers[2].agencyName));
+// todo: console.log(carMarket.getAgencyIdByName('no such agancy'));
 
 //* getAllAgenciesName
 //? @param {}
 //? @return {string[]} - agenciesNameArr - Array of all agencies name
+carMarket.getAllAgenciesName = function () {
+  return this.sellers.map((agancy) => agancy.agencyName);
+};
+
+carMarket.getAllAgenciesId = function () {
+  return this.sellers.map((agancy) => agancy.agencyId);
+};
+
+//todo: console.log(carMarket.getAllAgenciesName());
 
 //* getAllCarToBuy
 //? @param {}
 //? @return {object[]} - allCarsToBuy - arrays of all cars objects
+carMarket.getAllCarToBuy = function () {
+  const allCars = [];
+  this.sellers.forEach((agancy) =>
+    agancy.cars.forEach((cars) =>
+      cars.models.forEach((car) => allCars.push(car))
+    )
+  );
+
+  return allCars;
+};
+
+//todo: console.log(carMarket.getAllCarToBuy());
 
 //* getAllCarToBuyByAgencyId
 //? @param {string} - id of agency
 //? @return {object[]} - carsArray - arrays of all models objects of specific agency
+carMarket.getAllCarToBuyByAgencyId = function (agencyId) {
+  const agency = this.getAgencyById(agencyId);
+
+  return agency && agency.cars;
+};
+//todo: console.log(carMarket.getAllCarToBuyByAgencyId('Plyq5M5AZ'));
 
 //* getAllBrandsToBuyAgencyId
 //? @param {string} - agencyId -  id of agency
 // ? @return {string[]} - arrOfBrands - arrays of all brands name in specific agency
+carMarket.getAllBrandsToBuyAgencyId = function (agencyId) {
+  const agancy = this.getAgencyById(agencyId);
+
+  return agancy && agancy.cars.map((brands) => brands.brand);
+};
+
+//todo: console.log(carMarket.getAllBrandsToBuyAgencyId('Plyq5M5AZ'));
+//todo: console.log(carMarket.getAllBrandsToBuyAgencyId(carMarket.sellers[2].agencyId));
+//todo: console.log(carMarket.getAllBrandsToBuyAgencyId('no such agancy'));
 
 //! customer func's
 //todo getters
@@ -669,3 +730,22 @@ const carMarket = {
 //* getCustomerCash
 //? @param {id} - costumerId - costumer id
 //? @return {number} - CustomerCash
+
+// test = function (cases, testedMethod, comperFunc) {
+//   for (const testCase of cases) {
+//     const res = testedMethod(testCase.data);
+//     if (!comperFunc(res, testCase.expected)) {
+//       console.warn(`Failier at method ${testedMethod.name}`);
+//       console.warn(`test case: ${testCase.data}`);
+//       console.warn(`expectes: ${testCase.expected}`);
+//       console.warn(`resalt: ${res}`);
+//     }
+//   }
+// };
+
+// simpalComper = function (a, b) {
+//   return a === b;
+// };
+// sellerComper = function (a, b) {
+//   return a.agencyId === b.agencyId;
+// };
