@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <a href="#">link</a>
+    <img src="" alt="" />
+    <div class="x">Div with a class</div>
+    <div id="y">Div with an id</div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+  </body>
+  <script>
+    // * inside the script tag do the following:
+    // Select all elements inside the body and store each element
+    // in a separate variable and print them to the console.
+    // // 1. Select all elements not using the querySelector method.
+
+    // const h1 = document.getElementsByTagName('h1')[0];
+    // console.log(h1);
+
+    const h1NotUsingQuerySelector = document.getElementsByTagName('h1')[0];
+    const pNotUsingQuerySelector = document.getElementsByTagName('p')[0];
+    const aNotUsingQuerySelector = document.getElementsByTagName('a')[0];
+    const imgNotUsingQuerySelector = document.getElementsByTagName('img')[0];
+    const div1NotUsingQuerySelector = document.getElementsByClassName('x')[0];
+    const div2NotUsingQuerySelector = document.getElementById('y');
+    const input1NotUsingQuerySelector =
+      document.getElementsByTagName('input')[0];
+    const input2NotUsingQuerySelector =
+      document.getElementsByTagName('input')[1];
+    const input3NotUsingQuerySelector =
+      document.getElementsByTagName('input')[2];
+
+    console.log(h1NotUsingQuerySelector);
+    console.log(pNotUsingQuerySelector);
+    console.log(aNotUsingQuerySelector);
+    console.log(imgNotUsingQuerySelector);
+    console.log(div1NotUsingQuerySelector);
+    console.log(div2NotUsingQuerySelector);
+    console.log(input1NotUsingQuerySelector);
+    console.log(input2NotUsingQuerySelector);
+    console.log(input3NotUsingQuerySelector);
+
+    // 2. Select all elements using querySelector method.
+    const h1UsingQuerySelector = document.querySelector('h1');
+    const pUsingQuerySelector = document.querySelector('p');
+    const aUsingQuerySelector = document.querySelector('a');
+    const imgUsingQuerySelector = document.querySelector('img');
+    const div1UsingQuerySelector = document.querySelector('.x');
+    const div2UsingQuerySelector = document.querySelector('#y');
+    const input1UsingQuerySelector = document.querySelectorAll('input')[0];
+    const input2UsingQuerySelector = document.querySelectorAll('input')[1];
+    const input3UsingQuerySelector = document.querySelectorAll('input')[2];
+
+    console.log(h1UsingQuerySelector);
+    console.log(pUsingQuerySelector);
+    console.log(aUsingQuerySelector);
+    console.log(imgUsingQuerySelector);
+    console.log(div1UsingQuerySelector);
+    console.log(div2UsingQuerySelector);
+    console.log(input1UsingQuerySelector);
+    console.log(input2UsingQuerySelector);
+    console.log(input3UsingQuerySelector);
+
+    // 3. Select all inputs and iterate over them with the forEach
+    // method and print each one to the console. Using both
+    // querySelectorAll and getElementsByTagName.
+    const allElementsUsingQuerySelector = [...document.querySelectorAll('*')];
+    allElementsUsingQuerySelector.forEach((element) => console.log(element));
+
+    const allElementsNOTUsingQuerySelector = [
+      ...document.getElementsByName('*'),
+    ];
+    allElementsNOTUsingQuerySelector.forEach((element) => console.log(element));
+  </script>
+</html>

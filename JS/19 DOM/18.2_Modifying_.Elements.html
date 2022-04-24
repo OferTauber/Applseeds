@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Modifying Elements</title>
+  </head>
+  <style>
+    h1 {
+      color: red;
+    }
+    p {
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <h1>
+      I hate the color red. If only I was blue and I can sing "Im blue da da di
+      da da daaa"
+    </h1>
+    <p class="paragraph">I wish I was bigger</p>
+    <div id="description">
+      Select me and change my display property if you dare!
+    </div>
+  </body>
+  <script>
+    // 1. Change the h1 color to blue.
+    const h1 = document.querySelector('h1');
+    h1.style = 'color: blue';
+
+    // 2. Change the paragraph to 30 px
+    const paragraph = document.querySelector('.paragraph');
+    paragraph.style = 'font-size: 30px';
+
+    // 3. Change the description to an inline-block
+    const description = document.querySelector('#description');
+    description.textContent = 'New contant';
+    description.innerText = 'Eaven Newer contant!';
+
+    // 4. Change the body to a background color of green
+    const body = document.querySelector('body');
+    console.log(body);
+    body.style = 'background-color: green';
+
+    // 5. Change the documents title from “Modifying Elements” to something else.
+    const title = document.querySelector('title');
+    title.textContent = 'something else';
+  </script>
+</html>
