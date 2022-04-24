@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        margin-top: 80px;
+        background-color: #f5f5f5;
+      }
+
+      h1,
+      h3 {
+        text-align: center;
+      }
+
+      form {
+        border: 2px solid black;
+        width: 350px;
+        height: 140px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 40px auto;
+        background-color: #fafafa;
+      }
+
+      form > * {
+        height: 45%;
+        width: 95%;
+      }
+
+      .inputs {
+        display: flex;
+
+        justify-content: space-between;
+      }
+
+      .digit {
+        flex-shrink: 1;
+        margin: 0 2px;
+        height: 100%;
+        width: 100%;
+      }
+
+      .digit:focus {
+        border: 4px solid rgb(255, 202, 57);
+      }
+
+      input {
+        font-size: 1.7rem;
+        border: 2px solid black;
+        text-align: center;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Insert Code:</h1>
+    <form action="#">
+      <div class="inputs">
+        <input class="digit" type="text" name="input1" id="" />
+        <input class="digit" type="text" name="input2" id="" />
+        <input class="digit" type="text" name="input3 id="" />
+        <input class="digit" type="text" name="input4" id="" />
+        <input class="digit" type="text" name="input5" id="" />
+        <input class="digit" type="text" name="input6" id="" />
+      </div>
+
+      <input type="submit" value="Verify" />
+    </form>
+    <h3></h3>
+  </body>
+  <script src="./19.3_Multiple_inputs_copy.js"></script>
+</html>
