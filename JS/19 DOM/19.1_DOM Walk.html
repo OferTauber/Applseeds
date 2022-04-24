@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./script.js" defer></script> -->
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+  </body>
+  <script>
+    //     Please make the following changes to the html file while navigating the DOM.
+    // Create a variable that holds the <li> element with the class “start-here”.
+    const startingPoint = document.querySelector('.start-here');
+
+    //* Use traverse methods to complete these tasks:
+    // 1. Change the text from “title 2” to “main title”
+    startingPoint.textContent = 'main title';
+
+    // 2. Add another sub title with the text “sub title 4”
+    const title4 = document.createElement('li');
+    title4.textContent = 'title 4';
+    startingPoint.parentElement.insertBefore(title4, startingPoint.nextSibling);
+
+    // 3. Delete the last <li> element from the list.
+    const itemToRemove = startingPoint.parentElement.lastElementChild;
+    itemToRemove.remove();
+
+    // 4. Change the <title> element text to “Master Of The Dom”.
+    const docTitle =
+      startingPoint.parentElement.parentElement.parentElement.firstElementChild
+        .lastElementChild;
+    docTitle.textContent = 'Master of the Dom';
+
+    // 5. Change the text of the <p> element ot something else of your
+    startingPoint.parentElement.nextElementSibling.firstElementChild.textContent =
+      'Hello to you two!';
+  </script>
+</html>
