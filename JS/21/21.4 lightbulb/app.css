@@ -1,0 +1,14 @@
+:root {
+  --sprit-img: url('https://media.istockphoto.com/photos/classic-light-bulb-isolate-on-white-background-turn-on-and-turn-off-picture-id1341063932?b=1&k=20&m=1341063932&s=170667a&w=0&h=M2B8ik2EXAVu8NPMX4mn0wpQIfVXKQENms61ShtsuVY=');
+}
+
+div {
+  height: 500px;
+  width: 800px;
+  width: 350px;
+  background: var(--sprit-img) 10% center / cover;
+}
+
+.on {
+  background: var(--sprit-img) 90% center / cover;
+}
