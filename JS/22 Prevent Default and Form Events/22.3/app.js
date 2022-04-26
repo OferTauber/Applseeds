@@ -25,6 +25,7 @@ function game() {
     } else if (!alreadyGuessed.find((oldletter) => oldletter === letter)) {
       alreadyGuessed.push(letter);
       guessed.textContent = alreadyGuessed.join(', ');
+      guessed.classList.remove('hidden');
       massage.textContent = `Wrong letter`;
     } else {
       massage.textContent = `"${letter}" already been guesed!`;
@@ -38,7 +39,8 @@ function game() {
   massage.textContent = 'Guess a letter';
   massage.classList.remove('green', 'red');
   let gameIsOn = true;
-  guessed.textContent = '';
+  guessed.textContent = 'dummy text';
+  guessed.classList.add('hidden');
 
   window.addEventListener('keypress', (e) => {
     if (gameIsOn) {
