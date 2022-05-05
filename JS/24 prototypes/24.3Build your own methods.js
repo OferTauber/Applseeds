@@ -50,3 +50,9 @@ console.log(
     return acc + cur + index;
   }, 4)
 );
+
+module.export = {
+  filter: Array.myFilter,
+  reduce: Array.myReduce,
+  find: Array.myFind,
+};

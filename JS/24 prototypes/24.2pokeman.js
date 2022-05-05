@@ -11,21 +11,13 @@ Pokemon.prototype.attack = function (attackNum) {
   console.log(`${this.name} used ${this.attack[attackNum]}`);
 };
 
-const squirtle = new Pokemon('Squirtle', 'Water', [
+module.exports = Pokemon;
+
+const validPokemon = new Pokemon('Squirtle', 'Water', [
   'Ice Burn',
   'Anchor Shot',
   'Fury Swipes',
   'Acid Armor',
 ]);
 
-const vulpix = new Pokemon('Vulpix', 'Fire', [
-  'Chatter',
-  'Aeroblast',
-  'Giga Impact',
-  'Heavy Slam',
-]);
-
-squirtle.callPokemon();
-vulpix.callPokemon();
-squirtle.attack();
-vulpix.attack();
+console.log(console);
