@@ -1,27 +1,51 @@
 'use strict';
 
-Array.prototype.sameStructureAs = function (other) {
-  const isPrimitive = (variable) =>
-    typeof variable === 'number' || typeof variable === 'string';
-
-  const isSame = (var1, var2) => {
-    if (isPrimitive(var1)) return isPrimitive(var2);
-    return Array.isArray(var1) === Array.isArray(var2);
-  };
-
-  const comper = (arr1, arr2) => {
-    if (!isSame(arr1, arr2)) return false;
-
-    if (Array.isArray(arr1)) {
-      for (let i = 0; i < arr1.length; i++) {
-        if (!comper(arr1[i], arr2[i])) return false;
-      }
+function permutations(string) {
+  const generateCombination = (str, arr, set) => {
+    if (1 === arr.length) {
+      set.add(str + arr[0]);
+      return;
     }
-    return true;
+
+    for (let i = 0; i < arr.length; i++) {
+      const tempArr = [...arr];
+      const tempStr = str + tempArr.splice(i, 1);
+      generateCombination(tempStr, tempArr, set);
+    }
   };
 
-  return comper(this, other);
-};
+  const set = new Set();
+
+  generateCombination('', string.split(''), set);
+
+  return Array.from(set);
+}
+
+console.log(permutations('baa'));
+
+//-------
+// Array.prototype.sameStructureAs = function (other) {
+//   const isPrimitive = (variable) =>
+//     typeof variable === 'number' || typeof variable === 'string';
+
+//   const isSame = (var1, var2) => {
+//     if (isPrimitive(var1)) return isPrimitive(var2);
+//     return Array.isArray(var1) === Array.isArray(var2);
+//   };
+
+//   const comper = (arr1, arr2) => {
+//     if (!isSame(arr1, arr2)) return false;
+
+//     if (Array.isArray(arr1)) {
+//       for (let i = 0; i < arr1.length; i++) {
+//         if (!comper(arr1[i], arr2[i])) return false;
+//       }
+//     }
+//     return true;
+//   };
+
+//   return comper(this, other);
+// };
 
 //-------
 
