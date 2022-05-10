@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+      nav {
+        padding: 10px;
+      }
+      main {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      body {
+        background-color: #f9f9f9;
+      }
+
+      nav {
+        height: 50px;
+        width: 100%;
+        background-color: tan;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .movie {
+        max-width: 800px;
+        height: 650px;
+        background-color: #f9f9f9;
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 10px auto;
+        border-bottom: 1px solid lightblue;
+        display: flex;
+        justify-content: space-around;
+        background-color: bisque;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left .flex {
+        width: 100%;
+        margin-right: auto;
+        justify-content: center;
+        align-content: flex-end;
+      }
+      .left .flex > * {
+        width: 50%;
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        max-width: 430px;
+        justify-content: space-evenly;
+        height: 70%;
+      }
+
+      .btn {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        background-color: #333;
+        height: fit-content;
+        width: 120px;
+        border-radius: 40px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <form action="#">
+        <div>
+          <label for="user-input">Please enter movie name:</label>
+          <input class="user-input" type="text" />
+          <input class="send" type="submit" value="Send" />
+        </div>
+      </form>
+    </nav>
+    <main>
+      <div class="movie">
+        <div class="left">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BZjdmZDlkMzItNTg0OS00MjAxLWE0ZTQtZjdhOWM1MTJkOTc0XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+            alt="!!Poster!!"
+          />
+          <div class="flex">
+            <h5>Title:</h5>
+            <h2>Run</h2>
+          </div>
+          <div class="flex">
+            <h5>Year:</h5>
+            <h5>2020</h5>
+          </div>
+          <div class="flex">
+            <h5>Genre:</h5>
+            <h5>somthing</h5>
+          </div>
+          <div class="flex">
+            <h5>Director:</h5>
+            <h3>hololo</h3>
+          </div>
+        </div>
+        <div class="right">
+          <div class="flex">
+            <h5>Actors:</h5>
+            <h4>actors</h4>
+          </div>
+          <h5>Plot:</h5>
+          <p>
+            "Chloe, a teenage wheelchair user, is home schooled by her mother,
+            However, her mother's strange behavior doesn't go unnoticed and when
+            Chloe pries into some private papers, she discovers a Change of Name
+            Certificate document with her mother's name, Diane Sherman, on it.
+            When Chloe googles "Diane Sherman," the internet suddenly
+            disconnnects. Chloe becomes suspicious of all that her mother does,
+            suspecting her of something sinister. She decides to go on the run
+            in her wheelchair in a desperate attempt to get away from her."
+          </p>
+          <div class="rating">
+            <h4>rating:</h4>
+
+            <h5>sorce:</h5>
+            rating
+            <h5>sorce: rating</h5>
+            <h5>sorce: rating</h5>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./30.2.js"></script>
+  </body>
+</html>
