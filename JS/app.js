@@ -1,27 +1,44 @@
 'use strict';
+function spiralize(n) {
+  const changeDirection(direction) => {
+    const newDirection = { b};
+    if(direction[0]) {
+      newDirection[0] = 0;
+      
 
-function permutations(string) {
-  const generateCombination = (str, arr, set) => {
-    if (1 === arr.length) {
-      set.add(str + arr[0]);
-      return;
     }
+  }
+  
+  const arr = Array.from(Array(10), () => Array.from(Array(10), () => 0));
 
-    for (let i = 0; i < arr.length; i++) {
-      const tempArr = [...arr];
-      const tempStr = str + tempArr.splice(i, 1);
-      generateCombination(tempStr, tempArr, set);
-    }
-  };
 
-  const set = new Set();
-
-  generateCombination('', string.split(''), set);
-
-  return Array.from(set);
+  return arr;
 }
+console.log(spiralize(10));
+// =========================
 
-console.log(permutations('baa'));
+// function permutations(string) {
+//   const generateCombination = (str, arr, set) => {
+//     if (1 === arr.length) {
+//       set.add(str + arr[0]);
+//       return;
+//     }
+
+//     for (let i = 0; i < arr.length; i++) {
+//       const tempArr = [...arr];
+//       const tempStr = str + tempArr.splice(i, 1);
+//       generateCombination(tempStr, tempArr, set);
+//     }
+//   };
+
+//   const set = new Set();
+
+//   generateCombination('', string.split(''), set);
+
+//   return Array.from(set);
+// }
+
+// console.log(permutations('baa'));
 
 //-------
 // Array.prototype.sameStructureAs = function (other) {
@@ -66,8 +83,8 @@ console.log(permutations('baa'));
 //   return comper(this, other);
 // };
 
-console.log([1, 1, 1].sameStructureAs([2, 2, 2]));
-console.log([].sameStructureAs({}));
+// console.log([1, 1, 1].sameStructureAs([2, 2, 2]));
+// console.log([].sameStructureAs({}));
 
 // [1,1,1] same as [2,2,2]
 // [1,[1,1]] same as [2,[2,2]]
