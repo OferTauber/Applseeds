@@ -1,20 +1,18 @@
 'use strict';
-function spiralize(n) {
-  const changeDirection(direction) => {
-    const newDirection = { b};
-    if(direction[0]) {
-      newDirection[0] = 0;
-      
+// function spiralize(n) {
+//   const changeDirection(direction) => {
+//     const newDirection = { b};
+//     if(direction[0]) {
+//       newDirection[0] = 0;
 
-    }
-  }
-  
-  const arr = Array.from(Array(10), () => Array.from(Array(10), () => 0));
+//     }
+//   }
 
+//   const arr = Array.from(Array(10), () => Array.from(Array(10), () => 0));
 
-  return arr;
-}
-console.log(spiralize(10));
+//   return arr;
+// }
+// console.log(spiralize(10));
 // =========================
 
 // function permutations(string) {
