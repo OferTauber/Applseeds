@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Box extends React.Component {
+class Ex8_2 extends React.Component {
   state = { display: false };
 
   componentDidMount = () => {
@@ -29,4 +29,4 @@ class Box extends React.Component {
   }
 }
 
-export default Box;
+export default Ex8_2;

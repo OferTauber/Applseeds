@@ -6,6 +6,9 @@ import Ex8_1 from './components/ex8_1.js';
 import Ex8_2 from './components/ex8.2/ex8_2.js';
 import Ex8_3 from './components/ex8_3.js';
 import Ex9_1 from './components/ex9_1.js';
+import Ex11_1 from './components/ex11_1.js';
+import Ex11_2 from './components/ex11_2.js';
+import Ex11_3 from './components/ex11_3.js';
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
       {/* <Ex8_1 /> */}
       {/* <Ex8_2 /> */}
       {/* <Ex8_3 /> */}
-      <Ex9_1 />
+      {/* <Ex9_1 /> */}
+      {/* <Ex11_1 /> */}
+      {/* <Ex11_2 /> */}
+      <Ex11_3 />
     </div>
   );
 }
