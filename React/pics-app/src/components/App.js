@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import ImageList from './image_list';
-import unsplash from '../api/unsplash';
+import unsplash from './api/unsplash';
 
 class App extends Component {
   state = { images: [] };
