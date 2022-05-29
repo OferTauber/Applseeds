@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 // import EX16_1 from './ex16.1/EX16_1';
 // import { EX18_1, text } from './18/ex18.1';
 // import EX18_2 from './18/ex18.2';
+// import EX18_3 from './18/ex18.3';
+import EX18_4 from './18/ex18.4';
 
 class App extends Component {
   render() {
@@ -24,6 +26,8 @@ class App extends Component {
         {/* {<EX16_1 />} */}
         {/* {<EX18_1 text={text} length={12} />} */}
         {/* {<EX18_2 />} */}
+        {/* {<EX18_3 />} */}
+        {<EX18_4 />}
       </div>
     );
   }
