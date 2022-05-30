@@ -21,6 +21,7 @@ class RandomJoke extends Component {
 
   getRannomJoke = async () => {
     try {
+      cons;
       const joke = await axios.get('https://api.chucknorris.io/jokes/random');
       this.props.passJokeToControllers(joke.data.value);
     } catch (err) {
