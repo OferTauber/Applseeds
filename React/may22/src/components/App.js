@@ -13,7 +13,11 @@ import React, { Component } from 'react';
 // import EX19_1 from './19/ex19.1';
 // import EX19_2 from './19/ex19.2';
 // import EX19_3 from './19/ex19.3';
-import EX19_4 from './19/ex19.4';
+// import EX19_4 from './19/ex19.4';
+// import EX20_1 from './20/ex20.1';
+// import EX21_1 from './21/ex21.1';
+// import EX21_2 from './21/ex21.2';
+import EX21_3 from './21/ex21.3';
 
 class App extends Component {
   render() {
@@ -35,7 +39,11 @@ class App extends Component {
         {/* {<EX19_1 />} */}
         {/* {<EX19_2 />} */}
         {/* {<EX19_3 />} */}
-        {<EX19_4 />}
+        {/* {<EX19_4 />} */}
+        {/* {<EX20_1 />} */}
+        {/* {<EX21_1 />} */}
+        {/* {<EX21_2 />} */}
+        {<EX21_3 />}
       </div>
     );
   }
