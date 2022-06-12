@@ -1,0 +1,22 @@
+Write in your own words the following:
+Q1 - What are 3 things node.js has that the client side javascript doesn’t have. And the reasons why.
+
+A1 - 
+  I   - Global object - an object that accesses the environment in which node runs (operating system for example, or tag structures). A kind of replacement for the browser window object
+  
+  II  - Process object - node may want to end the process it is running (as opposed to a browser that always runs the site process, and should never end unless the user closes it)
+
+  III - Operating system access - NODE can be used as a server, and therefore must have access to the operating system. The browser is the process that runs on the operating system and has no ability to change it.
+ 
+
+
+
+
+Q2 - What are 3 things the client side javascript has that node.js doesn’t have. And the reasons why.
+
+A2 - 
+   I   - Window object, the browser always has a window for graphical display, but the server does not necessarily have a window, so Node does not have a default window object 
+  
+  II  - Document object - The browser displays various graphic elements on top of the DOM, but node has no DOM and therefore no document object
+  
+  III - Local storage - Local storage is a feature of a browser, and therefore does not exist in a NODE operating outside the browser

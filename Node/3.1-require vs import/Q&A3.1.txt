@@ -1,0 +1,9 @@
+Q1 - What is the difference between import and require?
+A1 - "import" must know in advance what is the name of the function or object you want to import. It does not allow import of dynamically exiting objects. On the other hand - it allows the import of several objects in one reading
+"require" just need to know what is the path from which you want to import
+
+Q2 - How can you enable using the import syntax using node js
+A2 - Within package.json file, add "type": "module". this will enable import to node js
+
+Q3 - Give 2 node.js environment variables that are not available when using the import syntax.
+A3 - 
