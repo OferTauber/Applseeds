@@ -1,4 +1,12 @@
 'use strict';
+
+let a = 42.1;
+
+const bear = {
+  s: 'roar',
+};
+
+console.log(typeof a);
 // function spiralize(n) {
 //   const changeDirection(direction) => {
 //     const newDirection = { b};
