@@ -1,0 +1,95 @@
+use findMyRestaurant
+db.createCollection("restaurants");
+db.restaurants.insertOne({ name: "Medhurst", address: { city: "Mayershire", street: "16 Kovacek Mill", 
+coordinates: [18.6420, 153.7138] }, cuisineType: "Lebanese", kosher: false, reviews: [ { date: "2022-06-19T16:41:34.969Z", score: 5 }, { date: "2022-06-20T03:07:23.292Z", score: 4 }, { date: "2022-06-20T04:01:57.367Z", score: 5 }] });  
+
+
+ db.restaurants.insertMany([
+ {
+   name: "Emard",
+   address: {
+     city: "Mayershire",
+     street: "85 Ladarius Court",
+     coordinates: [-36.6883, -150.7049]
+   },
+   cuisineType: "French",
+   kosher: true,
+   reviews: [
+     {date: "2022-06-20T03:07:23.292Z", score: 5},
+     {date: "2022-05-20T03:08:54.292Z", score: 5},
+     {date: "2022-06-20T04:01:57.367Z", score: 3}
+   ]
+ },
+
+ {
+   name: "Orn",
+   address: {
+     city: "Gusikowski",
+     street: "20 Neva Camp",
+     coordinates: [-85.4955, -71.3481]
+   },
+   cuisineType: "Indian",
+   kosher: true,
+   reviews: [
+     {date: "2022-06-20T03:07:23.292Z", score: 4},
+     {date: "22022-06-20T04:01:57.367Z", score: 4},
+     {date: "2022-06-20T04:01:57.367Z", score: 2}
+   ]
+ },
+
+ {
+   name: "Gusikowski",
+   address: {
+     city: "South Aureliaburgh",
+     street: "36 South Aureliaburgh",
+     coordinates: [-85.2317, 138.6897]
+   },
+   cuisineType: "Indian",
+   kosher: true,
+   reviews: [
+     {date: "2022-06-20T03:07:23.292Z", score: 4},
+     {date: "22022-06-20T04:01:57.367Z", score: 4},
+     {date: "2022-06-20T04:01:57.367Z", score: 2}
+   ]
+ },
+
+ {
+   name: "Littel Lockman",
+   address: {
+     city: "Gusikowski",
+     street: "50 Legros Plaza",
+     coordinates: [86.3140, -51.1091]
+   },
+   cuisineType: "American",
+   kosher: false,
+   reviews: [
+     {date: "2022-06-20T03:07:23.292Z", score: 4},
+     {date: "22022-06-20T04:01:57.367Z", score: 4},
+     {date: "2022-06-20T04:01:57.367Z", score: 2}
+   ]
+ },
+
+ {
+   name: "Labadie",
+   address: {
+     city: "Hettingerhaven",
+     street: "50 Luettgen Corners",
+     coordinates: [-29.5788, 45.5175]
+   },
+   cuisineType: "Italian",
+   kosher: false,
+   reviews: [
+     {date: "2022-06-20T03:07:23.292Z", score: 4},
+     {date: "22022-06-20T04:01:57.367Z", score: 4},
+     {date: "2022-06-20T04:01:57.367Z", score: 2}
+   ]
+ }
+ ]
+
+
+
+
+  );
+
+
+b.restaurants.find({"address.city": "Mayershire"})

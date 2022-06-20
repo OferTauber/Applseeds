@@ -1,0 +1,21 @@
+user: { 
+  _id: <user_id>,
+  name: "Ofer".
+  posts: [postid1, postid2, postid4]
+} 
+
+post: { 
+  _id: <post_id>, 
+  date: "",
+  title: "Post title!",
+  body: "In this post i iwll talk abute dogs...",
+  comments: [comment_id1, comment_id2,comment_id5,]
+}
+
+comment: {
+  _id: <comment_id>, 
+  postedBy: used_id,
+  body: "Grate post!",
+  comments: [comment_id3]
+}
+  
