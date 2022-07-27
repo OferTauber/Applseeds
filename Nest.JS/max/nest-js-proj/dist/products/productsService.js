@@ -37,6 +37,10 @@ let ProductsService = class ProductsService {
             updatedProduct.price = price;
         this.products[index] = Object.assign({}, updatedProduct);
     }
+    deleteProduct(prodId) {
+        const [_, index] = this.findProduct(prodId);
+        this.products.splice(index, 1);
+    }
     findProduct(id) {
         const productIndex = this.products.findIndex((prod) => prod.id === id);
         const product = this.products[productIndex];

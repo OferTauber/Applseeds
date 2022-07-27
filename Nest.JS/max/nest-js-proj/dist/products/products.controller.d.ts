@@ -7,4 +7,5 @@ export declare class ProductController {
     getAllProducts(): Product[];
     getProduct(prodId: string): Product;
     updateProduct(prodId: string, prodTitle: string, prodDesc: string, prodPrice: number): void;
+    removeProduct(prodId: string): void;
 }

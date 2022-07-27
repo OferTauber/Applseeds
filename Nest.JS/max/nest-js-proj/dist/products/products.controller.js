@@ -34,6 +34,10 @@ let ProductController = class ProductController {
         this.productService.updateProduct(prodId, prodTitle, prodDesc, prodPrice);
         return null;
     }
+    removeProduct(prodId) {
+        this.productService.deleteProduct(prodId);
+        return null;
+    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -67,6 +71,13 @@ __decorate([
     __metadata("design:paramtypes", [String, String, String, Number]),
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "updateProduct", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], ProductController.prototype, "removeProduct", null);
 ProductController = __decorate([
     (0, common_1.Controller)('products'),
     __metadata("design:paramtypes", [productsService_1.ProductsService])

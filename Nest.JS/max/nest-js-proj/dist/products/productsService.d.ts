@@ -5,5 +5,6 @@ export declare class ProductsService {
     getProducts(): Product[];
     getSingalProduct(prodId: string): Product;
     updateProduct(prodId: string, title: string, desc: string, price: number): void;
+    deleteProduct(prodId: string): void;
     private findProduct;
 }
