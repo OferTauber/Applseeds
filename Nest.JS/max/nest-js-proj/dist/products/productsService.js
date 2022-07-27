@@ -14,10 +14,35 @@ let ProductsService = class ProductsService {
         this.products = [];
     }
     insertProduct(title, desc, price) {
-        const prodId = new Date().toString();
+        const prodId = Math.random().toString();
         const newProduct = new productModel_1.Product(prodId, title, desc, price);
         this.products.push(newProduct);
         return prodId;
+    }
+    getProducts() {
+        return [...this.products];
+    }
+    getSingalProduct(prodId) {
+        const product = this.findProduct(prodId)[0];
+        return Object.assign({}, product);
+    }
+    updateProduct(prodId, title, desc, price) {
+        const [product, index] = this.findProduct(prodId);
+        const updatedProduct = Object.assign({}, product);
+        if (title)
+            updatedProduct.title = title;
+        if (desc)
+            updatedProduct.description = desc;
+        if (price)
+            updatedProduct.price = price;
+        this.products[index] = Object.assign({}, updatedProduct);
+    }
+    findProduct(id) {
+        const productIndex = this.products.findIndex((prod) => prod.id === id);
+        const product = this.products[productIndex];
+        if (!product)
+            throw new common_1.NotFoundException('Culd not find product');
+        return [product, productIndex];
     }
 };
 ProductsService = __decorate([

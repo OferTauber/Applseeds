@@ -8,10 +8,10 @@ async function bootstrap() {
     await app
         .listen(PORT)
         .then(() => {
-        console.log('Derver is up al litening to ' + PORT);
+        console.log('Server is up and litening to ' + PORT);
     })
         .catch((e) => {
-        console.warn(e);
+        console.error('Somthing went wrong! ', e);
     });
 }
 bootstrap();
