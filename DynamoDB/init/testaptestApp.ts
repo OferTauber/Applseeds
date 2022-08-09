@@ -1,10 +1,33 @@
-const {
-  DynamoDBClient,
-  BatchExecuteStatementCommand,
-} = require('@aws-sdk/client-dynamodb');
+// const {
+//   DynamoDBClient,
+//   BatchExecuteStatementCommand,
+// } = require('@aws-sdk/client-dynamodb');
+
+const AWS = require('aws-sdk');
 
 require('dotenv').config();
 
-const client = new DynamoDBClient({ region: 'ew-west-2' });
+AWS.config.update({
+  region: 'ew-west-2',
+});
 
-console.log(process.env.TEST_MY_MANE);
+const dynamodb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
+
+// const client = new DynamoDBClient({ region: 'ew-west-2' });
+
+const getItem = async () => {
+  try {
+    const params = {
+      TableName: 'my_first_table',
+      Key: {
+        id: 1,
+      },
+    };
+    const data = await dynamodb.getItem(params);
+    console.log(data);
+  } catch (err) {
+    console.warn(err);
+  }
+};
+
+getItem();
