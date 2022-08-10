@@ -5,10 +5,10 @@
 
 const AWS = require('aws-sdk');
 
-require('dotenv').config();
+// require('dotenv').config();
 
 AWS.config.update({
-  region: 'ew-west-2',
+  region: 'us-est-1',
 });
 
 const dynamodb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
