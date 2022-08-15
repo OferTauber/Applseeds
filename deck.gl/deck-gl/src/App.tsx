@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DeckGL from '@deck.gl/react/typed';
+import { LineLayer } from '@deck.gl/layers/typed';
 
+// Viewport settings
+const INITIAL_VIEW_STATE = {
+  longitude: -122.41669,
+  latitude: 37.7853,
+  zoom: 13,
+  pitch: 0,
+  bearing: 0,
+};
+
+// Data to be used by the LineLayer
+const data = [
+  {
+    sourcePosition: [-122.41669, 37.7853],
+    targetPosition: [-122.41769, 37.78],
+  },
+];
+
+// DeckGL react component
 function App() {
+  const layers = [new LineLayer({ id: 'line-layer', data })];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DeckGL
+      initialViewState={INITIAL_VIEW_STATE}
+      controller={true}
+      layers={layers}
+    />
   );
 }
 
