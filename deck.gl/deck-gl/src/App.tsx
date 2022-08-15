@@ -1,12 +1,14 @@
-import React from 'react';
 import DeckGL from '@deck.gl/react/typed';
 import { LineLayer } from '@deck.gl/layers/typed';
+import { MAPBOX_ACCESS_TOKEN } from './local';
+
+import { Map } from 'react-map-gl';
 
 // Viewport settings
 const INITIAL_VIEW_STATE = {
-  longitude: -122.41669,
-  latitude: 37.7853,
-  zoom: 13,
+  longitude: 35,
+  latitude: 31.9,
+  zoom: 9,
   pitch: 0,
   bearing: 0,
 };
@@ -14,8 +16,8 @@ const INITIAL_VIEW_STATE = {
 // Data to be used by the LineLayer
 const data = [
   {
-    sourcePosition: [-122.41669, 37.7853],
-    targetPosition: [-122.41769, 37.78],
+    sourcePosition: [35.2, 31.77],
+    targetPosition: [34.8, 32.1],
   },
 ];
 
@@ -28,7 +30,12 @@ function App() {
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}
-    />
+    >
+      <Map
+        mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+      />
+    </DeckGL>
   );
 }
 
