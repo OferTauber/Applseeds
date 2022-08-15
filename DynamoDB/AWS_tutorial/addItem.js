@@ -7,12 +7,13 @@ import { TableName } from './consts.js';
 export const params = {
   TableName: TableName,
   Item: {
-    Season: { N: '2' },
+    Season: { N: '4' },
     Episode: { N: '3' },
+    text: { S: 'Hellow world' },
   },
 };
 
-export const run = async () => {
+const run = async () => {
   try {
     const data = await ddbClient.send(new PutItemCommand(params));
     console.log(data);
