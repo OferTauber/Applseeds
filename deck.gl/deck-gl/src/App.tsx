@@ -4,6 +4,7 @@ import { Map } from 'react-map-gl';
 import { line1, line2 } from './layers/line_layer';
 import { iconLayer } from './layers/icon_layer';
 import { geojsonLayer } from './layers/geojson_layer';
+import { portsIconLayer } from './layers/all_ports/all_ports_icon_layer';
 
 // Viewport settings
 const INITIAL_VIEW_STATE = {
@@ -16,14 +17,16 @@ const INITIAL_VIEW_STATE = {
 
 // DeckGL react component
 function App() {
-  const layers = [line1, line2, iconLayer, geojsonLayer];
+  const layers = [line1, line2, iconLayer, geojsonLayer, portsIconLayer];
 
   return (
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}
-      getTooltip={(object: any) => object?.object?.name || object?.object?.id}
+      getTooltip={(object: any) =>
+        object?.object?.properties?.portname || object?.object?.id
+      }
     >
       <Map
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
