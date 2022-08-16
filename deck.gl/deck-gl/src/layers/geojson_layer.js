@@ -1,0 +1,58 @@
+import { GeoJsonLayer } from '@deck.gl/layers/typed';
+
+const data = [
+  {
+    type: 'Feature',
+    id: 'wld_trs_ports_wfp.14360',
+    geometry: {
+      type: 'Point',
+      coordinates: [116.69786959, -20.67559961],
+    },
+    geometry_name: 'shape',
+    properties: {
+      portname: 'Cossack Pioneer',
+      code: null,
+      prttype: 'Sea',
+      prtsize: 'Unknown',
+      status: 'Unknown',
+      maxdepth: null,
+      maxlength: null,
+      annualcapacitymt: null,
+      humuse: 'Unknown',
+      locprecision: 'accurate',
+      latitude: -20.6756,
+      longitude: 116.69787,
+      iso3: 'AUS',
+      iso3_op: 'AUS',
+      country: 'Australia',
+      lastcheckdate: null,
+      remarks: 'Aucop, Oil Terminal',
+      url_lca: null,
+      source: null,
+      createdate: '2021-02-24T11:52:47.493Z',
+      updatedate: '2021-02-24T11:52:47.493Z',
+      geonameid: 999999999,
+      gdb_geomattr_data: null,
+    },
+  },
+];
+
+export const geojsonLayer = new GeoJsonLayer({
+  id: 'geojson-layer',
+  data: data,
+  pickable: true,
+  stroked: false,
+  filled: true,
+  extruded: true,
+  pointType: 'circle',
+  lineWidthScale: 20,
+  lineWidthMinPixels: 2,
+  getFillColor: [250, 180, 0, 240],
+  // getLineColor: d => colorToRGBArray(d.properties.color),
+  getLineColor: [0, 0, 0, 255],
+  getText: (d) => d.properties.portname,
+  getTextSize: 12,
+  getPointRadius: 100,
+  getLineWidth: 1,
+  getElevation: 30,
+});
