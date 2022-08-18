@@ -3,19 +3,20 @@ import { render } from 'react-dom';
 import { StaticMap } from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import { MapView } from '@deck.gl/core';
-import { IconLayer } from '@deck.gl/layers';
+import { points } from './data/points_data';
+import { portsData, features } from './data/temp_data';
 
 import IconClusterLayer from './icon-cluster-layer';
 
 // Source data CSV
-const DATA_URL =
-  'https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/icon/meteorites.json'; // eslint-disable-line
+const DATA_URL = points;
+//'https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/icon/meteorites.json'; // eslint-disable-line
 
 const MAP_VIEW = new MapView({ repeat: true });
 const INITIAL_VIEW_STATE = {
   longitude: 21.685,
   latitude: 27.96,
-  zoom: 2,
+  zoom: 1,
   maxZoom: 20,
   pitch: 0,
   bearing: 0,
@@ -80,26 +81,37 @@ export default function App() {
   };
 
   const layerProps = {
-    data,
     pickable: true,
     getPosition: (d) => d.coordinates,
+    onHover: !hoverInfo.objects && setHoverInfo,
     iconAtlas,
     iconMapping,
-    onHover: !hoverInfo.objects && setHoverInfo,
   };
 
   const layer = new IconClusterLayer({
     ...layerProps,
+    data,
     id: 'icon-cluster',
+    sizeScale: 40,
+    getIcon: (d) =>
+      getIconName(d.properties.cluster ? d.properties.point_count : 1),
+    getSize: (d) =>
+      getIconSize(d.properties.cluster ? d.properties.point_count : 1),
+  });
+
+  const portsLayer = new IconClusterLayer({
+    ...layerProps,
+    id: 'ports-icon',
+    data: portsData.features,
     sizeScale: 40,
   });
 
   return (
     <DeckGL
-      layers={[layer]}
+      layers={[portsLayer]}
       views={MAP_VIEW}
       initialViewState={INITIAL_VIEW_STATE}
-      controller={{ dragRotate: false }}
+      controller={{ dragRotate: true }}
       onViewStateChange={hideTooltip}
       onClick={expandTooltip}
     >
