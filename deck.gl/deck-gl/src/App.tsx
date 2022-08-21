@@ -24,9 +24,10 @@ function App() {
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}
-      getTooltip={(object: any) =>
-        object?.object?.properties?.portname || object?.object?.id
-      }
+      getTooltip={(object: any) => {
+        console.log(object);
+        return object?.object?.properties?.portname || object?.object?.id;
+      }}
     >
       <Map
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}

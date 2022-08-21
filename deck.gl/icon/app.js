@@ -5,6 +5,8 @@ import DeckGL from '@deck.gl/react';
 import { MapView } from '@deck.gl/core';
 import { points } from './data/points_data';
 import { portsData, features } from './data/temp_data';
+import { MAPBOX_ACCESS_TOKEN } from './local';
+import { Map } from 'react-map-gl';
 
 import IconClusterLayer from './icon-cluster-layer';
 
@@ -24,41 +26,6 @@ const INITIAL_VIEW_STATE = {
 
 const MAP_STYLE =
   'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
-
-function renderTooltip(info) {
-  const { object, x, y } = info;
-
-  if (info.objects) {
-    return (
-      <div className="tooltip interactive" style={{ left: x, top: y }}>
-        {info.objects.map(({ name, year, mass, class: meteorClass }) => {
-          return (
-            <div key={name}>
-              <h5>{name}</h5>
-              <div>Year: {year || 'unknown'}</div>
-              <div>Class: {meteorClass}</div>
-              <div>Mass: {mass}g</div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-
-  if (!object) {
-    return null;
-  }
-
-  return object.cluster ? (
-    <div className="tooltip" style={{ left: x, top: y }}>
-      {object.point_count} records
-    </div>
-  ) : (
-    <div className="tooltip" style={{ left: x, top: y }}>
-      {object.name} {object.year ? `(${object.year})` : ''}
-    </div>
-  );
-}
 
 /* eslint-disable react/no-deprecated */
 export default function App() {
@@ -114,10 +81,29 @@ export default function App() {
       controller={{ dragRotate: true }}
       onViewStateChange={hideTooltip}
       onClick={expandTooltip}
-    >
-      <StaticMap reuseMaps mapStyle={mapStyle} preventStyleDiffing={true} />
+      getTooltip={(d) => {
+        if (!d.object) return null;
 
-      {renderTooltip(hoverInfo)}
+        if (d.object.properties) {
+          // = Point is a singel port
+          return `Port name: ${d.object.properties.portname || 'unknown'}
+            Port code: ${d.object.properties.code || 'unknown'}
+            Country ${
+              d.object.properties.country ||
+              d.object.properties.iso3 ||
+              d.object.properties.iso3_op ||
+              'unknown'
+            }`;
+        } else {
+          // = Point is a cluster
+          return d.object.point_count + ' ports';
+        }
+      }}
+    >
+      <Map
+        mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+      />
     </DeckGL>
   );
 }

@@ -76,9 +76,6 @@ export default class IconClusterLayer extends CompositeLayer {
         iconMapping,
         sizeScale,
         getPosition: (d) => {
-          console.log('get position');
-          console.log(d);
-          // return [d.geometry.coordinates[1], d.geometry.coordinates[0]];
           return d.geometry.coordinates || d.geometry.geometry.coordinates;
         },
         getIcon: (d) =>
