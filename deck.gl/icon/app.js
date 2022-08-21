@@ -2,7 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import DeckGL from '@deck.gl/react';
 import { MapView } from '@deck.gl/core';
+
 import { portsData } from './data/temp_data';
+
 import { MAPBOX_ACCESS_TOKEN } from './local';
 import { Map } from 'react-map-gl';
 
