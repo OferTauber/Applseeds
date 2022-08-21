@@ -1,0 +1,14 @@
+{
+  "name": "24-prototypes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "24.1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.0.2"
+  }
+}

@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 import { StaticMap } from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import { MapView } from '@deck.gl/core';
-import { points } from './data/points_data';
-import { portsData, features } from './data/temp_data';
+import { points } from './icons_sprite/points_data';
+import { portsData, features } from './icons_sprite/temp_data';
 import { MAPBOX_ACCESS_TOKEN } from './local';
 import { Map } from 'react-map-gl';
 

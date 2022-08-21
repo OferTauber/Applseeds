@@ -1,0 +1,15 @@
+{
+  "name": "My product",
+  "category": "goods",
+  "isActiv": false,
+  "details": {
+    "description": "I don'nt have mutsh to sat aboute it",
+    "price": 120,
+    "discount": 10,
+    "phone": "+972547718490",
+    "images": [
+      "https://picsum.photos/id/1/200/300",
+      "https://picsum.photos/id/1/200/300"
+    ]
+  }
+}

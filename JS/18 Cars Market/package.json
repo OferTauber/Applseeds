@@ -1,0 +1,14 @@
+{
+  "name": "18-cars-market",
+  "version": "1.0.0",
+  "description": "",
+  "main": "_CarsAg.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
