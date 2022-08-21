@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import { StaticMap } from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import { MapView } from '@deck.gl/core';
-import { points } from './icons_sprite/points_data';
-import { portsData, features } from './icons_sprite/temp_data';
+
+import { portsData } from './data/temp_data';
+
 import { MAPBOX_ACCESS_TOKEN } from './local';
 import { Map } from 'react-map-gl';
 
 import IconClusterLayer from './icon-cluster-layer';
 
 // Source data CSV
-const DATA_URL = points;
-//'https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/icon/meteorites.json'; // eslint-disable-line
-
 const MAP_VIEW = new MapView({ repeat: true });
 const INITIAL_VIEW_STATE = {
   longitude: 21.685,
@@ -24,53 +21,31 @@ const INITIAL_VIEW_STATE = {
   bearing: 0,
 };
 
-const MAP_STYLE =
-  'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
-
 /* eslint-disable react/no-deprecated */
 export default function App() {
-  const data = DATA_URL;
   const iconMapping = 'data/location-icon-mapping.json';
   const iconAtlas = 'data/location-icon-atlas.png';
 
-  const mapStyle = MAP_STYLE;
-  const [hoverInfo, setHoverInfo] = useState({});
-
-  const hideTooltip = () => {
-    setHoverInfo({});
-  };
-  const expandTooltip = (info) => {
-    if (info.picked) {
-      setHoverInfo(info);
-    } else {
-      setHoverInfo({});
-    }
-  };
+  // const expandTooltip = (info) => {
+  //   if (info.picked) {
+  //     setHoverInfo(info);
+  //   } else {
+  //     setHoverInfo({});
+  //   }
+  // };
 
   const layerProps = {
     pickable: true,
     getPosition: (d) => d.coordinates,
-    onHover: !hoverInfo.objects && setHoverInfo,
     iconAtlas,
     iconMapping,
-  };
-
-  const layer = new IconClusterLayer({
-    ...layerProps,
-    data,
-    id: 'icon-cluster',
-    sizeScale: 40,
-    getIcon: (d) =>
-      getIconName(d.properties.cluster ? d.properties.point_count : 1),
-    getSize: (d) =>
-      getIconSize(d.properties.cluster ? d.properties.point_count : 1),
-  });
-
-  const portsLayer = new IconClusterLayer({
-    ...layerProps,
     id: 'ports-icon',
     data: portsData.features,
     sizeScale: 40,
+  };
+
+  const portsLayer = new IconClusterLayer({
+    ...layerProps,
   });
 
   return (
@@ -79,8 +54,7 @@ export default function App() {
       views={MAP_VIEW}
       initialViewState={INITIAL_VIEW_STATE}
       controller={{ dragRotate: true }}
-      onViewStateChange={hideTooltip}
-      onClick={expandTooltip}
+      // onClick={expandTooltip}
       getTooltip={(d) => {
         if (!d.object) return null;
 
