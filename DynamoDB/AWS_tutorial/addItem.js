@@ -7,9 +7,10 @@ import { TableName } from './consts.js';
 export const params = {
   TableName: TableName,
   Item: {
-    Season: { N: '4' },
+    Season: { N: '12' },
     Episode: { N: '3' },
-    text: { S: 'Hellow world' },
+    text: { S: 'Hellow world2022' },
+    aaa: { S: 'aaaa' },
   },
 };
 
