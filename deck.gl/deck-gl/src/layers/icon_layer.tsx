@@ -40,7 +40,8 @@ export const iconLayer = new IconLayer({
   iconAtlas:
     'https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png',
   iconMapping: ICON_MAPPING,
-  getIcon: (d) => 'marker',
+  getIcon: (d) =>
+    'https://cdn0.iconfinder.com/data/icons/ui-for-commercial/32/spot_site_located-512.png',
 
   sizeScale: 15,
   getPosition: (d) => d.coordinates,

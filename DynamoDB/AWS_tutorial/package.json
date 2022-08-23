@@ -1,9 +1,11 @@
 {
-  "name": "aws_tutorial",
+
   "type": "module",
+  "name": "aws_tutorial",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "addItem.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.145.0"
+
+    "@aws-sdk/client-dynamodb": "^3.154.0"
+
   }
 }
