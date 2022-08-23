@@ -1,20 +1,17 @@
 {
-
-  "type": "module",
-  "name": "aws_tutorial",
+  "name": "crad",
   "version": "1.0.0",
   "description": "",
-  "main": "addItem.js",
-
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-
-    "@aws-sdk/client-dynamodb": "^3.154.0"
-
+    "chalk": "^4.1.2",
+    "uniqid": "^5.4.0",
+    "validator": "^13.7.0",
+    "yargs": "^17.5.1"
   }
 }

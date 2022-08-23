@@ -1,0 +1,30 @@
+{
+  "name": "coding-tasks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OferTauber/Applseeds.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OferTauber/Applseeds/issues"
+  },
+  "homepage": "https://github.com/OferTauber/Applseeds#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dropbox": "^10.30.0",
+    "faker": "^5.5.3",
+    "node-sass": "^7.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "jest": "^28.0.2"
+  },
+  "description": ""
+}

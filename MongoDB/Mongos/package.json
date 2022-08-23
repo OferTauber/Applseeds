@@ -1,11 +1,8 @@
 {
-
-  "type": "module",
-  "name": "aws_tutorial",
+  "name": "mongos",
   "version": "1.0.0",
   "description": "",
-  "main": "addItem.js",
-
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-
-    "@aws-sdk/client-dynamodb": "^3.154.0"
-
+    "mongoose": "^5.3.1"
   }
 }
