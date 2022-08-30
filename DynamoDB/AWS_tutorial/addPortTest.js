@@ -4,26 +4,54 @@ import { ddbClient } from './client.js';
 import { portsTableName } from './consts.js';
 import { portsData } from './portsData.js';
 
+const convertPortObjToDynamoDbItemFormat = (port) => {
+  const { id, geometry, properties, type } = port;
+
+  return {
+    id: { S: id },
+    type: { S: type || '' },
+    geometry: {
+      M: {
+        type: { S: geometry.type || '' },
+        coordinates: {
+          L: [
+            { N: geometry.coordinates[0] + '' },
+            { N: geometry.coordinates[1] + '' },
+          ],
+        },
+      },
+    },
+    properties: {
+      M: {
+        portname: { S: properties.portname || '' },
+        country: { S: properties.country || '' },
+        iso3: { S: properties.iso3 || '' },
+        iso3_op: { S: properties.iso3_op || '' },
+      },
+    },
+  };
+};
+
 const params = {
   TableName: portsTableName,
-  Item: {
-    id: { S: 'wld_trs_ports_wfp.14314' },
-    id: { S: 'wld_trs_ports_wfp.14314XXX' },
-    // geometry: {
-    //   M: {
-    //     type: { S: 'Point' },
-    //     coordinates: { L: [{ N: 20.62966191 }, { N: -0.94560244 }] },
-    //   },
-    // },
-    // properties: {
-    //   M: {
-    //     ortname: { S: 'Watsi-Genge' },
-    //     country: { S: 'Democratic Republic of the Congo' },
-    //     iso3: { S: '' },
-    //     iso3_op: { S: 'COD' },
-    //   },
-    // },
-  },
+  Item: convertPortObjToDynamoDbItemFormat(portsData.features[3]),
+  // Item: {
+  //   id: { S: 'wld_trs_ports_wfp.14314' },
+  //   geometry: {
+  //     M: {
+  //       type: { S: 'Point' },
+  //       coordinates: { L: [{ N: '20.62966191' }, { N: '-0.94560244' }] },
+  //     },
+  //   },
+  //   properties: {
+  //     M: {
+  //       portname: { S: 'Watsi-Genge' },
+  //       country: { S: 'Democratic Republic of the Congo' },
+  //       iso3: { S: '' },
+  //       iso3_op: { S: 'COD' },
+  //     },
+  //   },
+  // },
 };
 // const params = {
 //   TableName: portsTableName,

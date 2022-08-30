@@ -4,15 +4,34 @@ import { ddbClient } from './client.js';
 import { portsTableName } from './consts.js';
 import { portsData } from './portsData.js';
 
-// Set the parameters
-export const params = {
-  TableName: portsTableName,
-  Item: {
-    Season: { N: '12' },
-    Episode: { N: '3' },
-    text: { S: 'Hellow world2022' },
-    aaa: { S: 'aaaa' },
-  },
+const ports = portsData.features;
+
+const convertPortObjToDynamoDbItemFormat = (port) => {
+  const { id, geometry, properties, type } = port;
+
+  return {
+    id: { S: id },
+    type: { S: type || '' },
+    geometry: {
+      M: {
+        type: { S: geometry.type || '' },
+        coordinates: {
+          L: [
+            { N: geometry.coordinates[0] + '' },
+            { N: geometry.coordinates[1] + '' },
+          ],
+        },
+      },
+    },
+    properties: {
+      M: {
+        portname: { S: properties.portname || '' },
+        country: { S: properties.country || '' },
+        iso3: { S: properties.iso3 || '' },
+        iso3_op: { S: properties.iso3_op || '' },
+      },
+    },
+  };
 };
 
 // const run = async () => {
@@ -42,21 +61,23 @@ export const params = {
 //   },
 // },
 
-const extractPortData = (rawPort) => {
-  const { type, id, geometry, geometry_name, properties } = rawPort;
-  const { portname, country, iso3, iso3_op } = properties;
-  return {
-    type: { S: type },
-    id: { S: id },
-    geometry: { S: geometry },
-    geometry_name,
-    properties: { portname, country, iso3, iso3_op },
-  };
-};
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-const run = () => {
-  const port = extractPortData(portsData.features[0]);
-  console.log(port);
+const run = async () => {
+  try {
+    for (const port of ports) {
+      const params = {
+        TableName: portsTableName,
+        Item: convertPortObjToDynamoDbItemFormat(port),
+      };
+      await ddbClient.send(new PutItemCommand(params));
+      await sleep(50);
+    }
+  } catch (e) {
+    console.error(e);
+  }
 };
 
 run();

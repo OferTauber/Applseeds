@@ -10,8 +10,9 @@ const key = { [season]: { N: '12' } };
 
 const params = {
   TableName,
-  Key: key,
-  ProjectionExpression: 'Season',
+  Key: {
+    Season: { N: '12' },
+  },
 };
 
 const executeStatementParams = { Statement: `SELECT * FROM ${TableName}` };

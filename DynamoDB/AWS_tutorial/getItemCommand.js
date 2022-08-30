@@ -2,13 +2,12 @@ import { GetItemCommand } from '@aws-sdk/client-dynamodb';
 import { ddbClient } from './client.js';
 import { TableName } from './consts.js';
 
-const season = 'Season';
-const key = `"Season": { N: '12' }`;
-
 const params = {
   TableName,
-  Key: key,
-  ProjectionExpression: 'Season',
+  Key: {
+    Season: { N: '1' },
+    Episode: { N: '1' },
+  },
 };
 
 // const GetItemCommandParams = { Statement: `SELECT * FROM ${TableName}` };
