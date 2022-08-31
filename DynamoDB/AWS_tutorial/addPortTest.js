@@ -35,40 +35,7 @@ const convertPortObjToDynamoDbItemFormat = (port) => {
 const params = {
   TableName: portsTableName,
   Item: convertPortObjToDynamoDbItemFormat(portsData.features[3]),
-  // Item: {
-  //   id: { S: 'wld_trs_ports_wfp.14314' },
-  //   geometry: {
-  //     M: {
-  //       type: { S: 'Point' },
-  //       coordinates: { L: [{ N: '20.62966191' }, { N: '-0.94560244' }] },
-  //     },
-  //   },
-  //   properties: {
-  //     M: {
-  //       portname: { S: 'Watsi-Genge' },
-  //       country: { S: 'Democratic Republic of the Congo' },
-  //       iso3: { S: '' },
-  //       iso3_op: { S: 'COD' },
-  //     },
-  //   },
-  // },
 };
-// const params = {
-//   TableName: portsTableName,
-//   Item: {
-//     id: { S: 'wld_trs_ports_wfp.14314' },
-//     geometry: {
-//       type: { S: 'Point' },
-//       coordinates: [{ N: 20.62966191 }, { N: -0.94560244 }],
-//     },
-//     properties: {
-//       ortname: { S: 'Watsi-Genge' },
-//       country: { S: 'Democratic Republic of the Congo' },
-//       // iso3: { S: '' },
-//       iso3_op: { S: 'COD' },
-//     },
-//   },
-// };
 
 const run = async () => {
   try {
