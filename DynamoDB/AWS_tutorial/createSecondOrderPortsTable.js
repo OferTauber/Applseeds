@@ -1,6 +1,7 @@
 // Import required AWS SDK clients and commands for Node.js
 import { CreateTableCommand } from '@aws-sdk/client-dynamodb';
 import { ddbClient } from './client.js';
+import { secondOrderPorts } from './consts.js';
 
 // Set the parameters
 export const params = {
@@ -20,7 +21,7 @@ export const params = {
     ReadCapacityUnits: 100,
     WriteCapacityUnits: 100,
   },
-  TableName: 'operational_dashboard_second_order_ports',
+  TableName: secondOrderPorts,
   StreamSpecification: {
     StreamEnabled: false,
   },

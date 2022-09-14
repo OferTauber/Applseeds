@@ -15,6 +15,7 @@ const secondOrderPorts = [
     createdate: '2021-02-24T11:52:47.493Z',
     updatedate: '2021-02-24T11:52:47.493Z',
     geonameid: 204280,
+    null: null
   },
   {
     id: 'wld_trs_ports_wfp.14315',
