@@ -4,54 +4,6 @@ export const chankes = [
     ports: [
       {
         type: 'Feature',
-        id: 'wld_trs_ports_wfp.14314',
-        geometry: {
-          type: 'Point',
-          coordinates: [20.62966191, -0.94560244],
-        },
-        geometry_name: 'shape',
-        properties: {
-          portname: 'Watsi-Genge',
-          code: '',
-          iso3: 'COD',
-          iso3_op: 'COD',
-          country: 'Democratic Republic of the Congo',
-        },
-      },
-      {
-        type: 'Feature',
-        id: 'wld_trs_ports_wfp.14315',
-        geometry: {
-          type: 'Point',
-          coordinates: [-132.00969253, 53.24742403],
-        },
-        geometry_name: 'shape',
-        properties: {
-          portname: 'Charlotte (Skidegate)',
-          code: 'CASKI',
-          iso3: 'CAN',
-          iso3_op: 'CAN',
-          country: 'Canada',
-        },
-      },
-      {
-        type: 'Feature',
-        id: 'wld_trs_ports_wfp.14316',
-        geometry: {
-          type: 'Point',
-          coordinates: [-151.41553244, 59.60158521],
-        },
-        geometry_name: 'shape',
-        properties: {
-          portname: 'Homer',
-          code: 'USHOI',
-          iso3: '',
-          iso3_op: 'USA',
-          country: '',
-        },
-      },
-      {
-        type: 'Feature',
         id: 'wld_trs_ports_wfp.14317',
         geometry: {
           type: 'Point',
