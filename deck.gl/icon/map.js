@@ -19,7 +19,9 @@ const INITIAL_VIEW_STATE = {
 /* eslint-disable react/no-deprecated */
 export default function Map({ portsData }) {
   const iconMapping = 'icons_sprites/location-icon-mapping.json';
-  const iconAtlas = 'icons_sprites/location-icon-atlas.png';
+  // const iconAtlas = 'icons_sprites/location-icon-atlas.png';
+  const iconAtlas =
+    'https://raw.githubusercontent.com/OferTauber/Applseeds/main/deck.gl/icon/icons_sprite/location-icon-atlas.png';
 
   const layerProps = {
     pickable: true,
