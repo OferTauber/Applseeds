@@ -33,11 +33,14 @@ export default class IconClusterLayer extends CompositeLayer {
         maxZoom: 16,
         radius: props.sizeScale * Math.sqrt(2),
       });
+
       index.load(
-        props.data.map((d) => ({
-          geometry: { coordinates: props.getPosition(d.geometry || d) },
-          properties: d,
-        }))
+        props.data.map((d) => {
+          return {
+            geometry: { coordinates: props.getPosition(d.geometry || d) },
+            properties: d,
+          };
+        })
       );
       this.setState({ index });
     }
@@ -78,8 +81,11 @@ export default class IconClusterLayer extends CompositeLayer {
         getPosition: (d) => {
           return d.geometry.coordinates || d.geometry.geometry.coordinates;
         },
-        getIcon: (d) =>
-          getIconName(d.properties.cluster ? d.properties.point_count : 1),
+        getIcon: (d) => {
+          return getIconName(
+            d.properties.cluster ? d.properties.point_count : 1
+          );
+        },
         getSize: (d) =>
           getIconSize(d.properties.cluster ? d.properties.point_count : 1),
       })

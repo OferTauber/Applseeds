@@ -2,6 +2,7 @@ import React from 'react';
 import DeckGL from '@deck.gl/react';
 import { MapView } from '@deck.gl/core';
 import { Map as ReactMapGl } from 'react-map-gl';
+import iconMapping from './icons_sprite/location-icon-mapping ';
 
 import IconClusterLayer from './icon-cluster-layer';
 
@@ -18,16 +19,16 @@ const INITIAL_VIEW_STATE = {
 
 /* eslint-disable react/no-deprecated */
 export default function Map({ portsData }) {
-  const iconMapping = 'icons_sprites/location-icon-mapping.json';
+  // const iconMapping = 'icons_sprites/location-icon-mapping.json';
   // const iconAtlas = 'icons_sprites/location-icon-atlas.png';
   const iconAtlas =
-    'https://raw.githubusercontent.com/OferTauber/Applseeds/main/deck.gl/icon/icons_sprite/location-icon-atlas.png';
+    'https://raw.githubusercontent.com/OferTauber/Applseeds/main/deck.gl/icon/icons_sprite/DockTeck-icons-no-backgrond.png';
 
   const layerProps = {
     pickable: true,
     getPosition: (d) => d.coordinates,
     iconAtlas,
-    iconMapping,
+    iconMapping: iconMapping,
     id: 'ports-icon',
     data: portsData.features,
     sizeScale: 40,
