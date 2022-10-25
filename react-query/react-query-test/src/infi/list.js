@@ -1,5 +1,7 @@
 import { useInfiniteQuery } from 'react-query';
 import Card from '../components/char';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 const Infi = () => {
   const fetchChars = async ({
@@ -8,6 +10,8 @@ const Infi = () => {
     const res = await fetch(pageParam);
     return await res.json();
   };
+
+  const { ref, inView } = useInView();
 
   const {
     data,
@@ -24,25 +28,25 @@ const Infi = () => {
     },
   });
 
+  useEffect(() => {
+    if (inView) fetchNextPage();
+  }, [inView]);
+
   if (status === 'loading') return <div>Loading...</div>;
 
   if (status === 'error') return <div>Error!</div>;
 
   const mapCards = () => {
     return data.pages.reduce((acc, cur) => {
-      return acc.concat(
+      const cards = acc.concat(
         cur.results.map((char) => <Card key={char.id} char={char} />)
       );
+      const refDiv = <div ref={ref}></div>;
+      cards.splice(cards.length - 2, 0, refDiv);
+      return cards;
     }, []);
   };
 
-  return (
-    <>
-      {mapCards()}
-      <div>
-        <button onClick={() => fetchNextPage()}>Load more</button>
-      </div>
-    </>
-  );
+  return <>{mapCards()}</>;
 };
 export default Infi;
