@@ -9,7 +9,9 @@ export default function Character() {
     const res = await fetch(
       `https://rickandmortyapi.com/api/character?page=${queryKey[1]}`
     );
-    return await res.json();
+    const data = await res.json();
+    console.log(data);
+    return data;
   };
 
   const { data, status } = useQuery(['characters', page], fetchChars);
